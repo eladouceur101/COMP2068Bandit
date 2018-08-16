@@ -1,0 +1,13 @@
+{
+  "id": "",
+  "artName": "",
+  "imgURL": "",
+  "description": "",
+  "price": 0,
+  "artist": {
+    "name": "",
+    "born": "",
+    "died": "",
+    "nationality": ""
+  }
+}

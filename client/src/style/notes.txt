@@ -1,0 +1,11 @@
+color pallet info:
+yellow #efb71e
+light yellow #d7cd47
+light green #669b4f
+dark teal #205555
+dark purple #282242
+
+
+      {this.state.items.map(item => (
+        <fart smell={item.smell} />
+      ))}
