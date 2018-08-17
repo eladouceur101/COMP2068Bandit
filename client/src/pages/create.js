@@ -1,7 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import Host from '../config/api';
-import { Form, Container, Icon, Segment } from 'semantic-ui-react';
+import { Form, Container, Icon, Segment, Button } from 'semantic-ui-react';
 import Dropzone from 'react-dropzone';
 
 class create extends React.Component {
@@ -128,7 +128,11 @@ class create extends React.Component {
               required
               onChange={this.handleArtistChange}
             />
-            <Form.Button content="Submit" />
+            <Form.Button color="green" content="Submit" />
+            <Button.Or />
+            <Button color="blue" href="/">
+              Home
+            </Button>
           </Form>
         </Container>
       </Segment>

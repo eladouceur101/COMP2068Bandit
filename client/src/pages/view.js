@@ -30,6 +30,11 @@ class view extends React.Component {
   render() {
     console.log(this.props);
     console.log(this.state);
+
+    // let dateLength = 10;
+    // let born = this.state.art.artist.born;
+    // let died = this.state.art.artist.died;
+
     return (
       <Segment raised>
         {this.state.art.artist && (
@@ -92,6 +97,7 @@ class view extends React.Component {
                     </Label>
                     {/* to do */}
                     <span>{this.state.art.artist.born}</span>
+                    {/* <span>{born.substring(0, dateLength)}</span> */}
                   </Grid.Row>
                 </Segment>
 
