@@ -52,7 +52,7 @@ class Home extends React.Component {
                   <Grid.Column centered>
                     <ArtCard>
                       <Card>
-                        <Image src={`http://localhost:3000/${art.imgURL}`} />
+                        <Image src={`/${art.imgURL}`} />
                         <Card.Content>
                           <Card.Header>{art.artName}</Card.Header>
                           <Card.Meta>
