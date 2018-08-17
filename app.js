@@ -31,6 +31,7 @@ app.use(
   }),
 );
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.use(fileUpload());
 app.use(cors());

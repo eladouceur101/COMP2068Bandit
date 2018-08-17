@@ -1,6 +1,5 @@
 import React from 'react';
 import Axios from 'axios';
-import Host from '../config/api';
 import { Form, Container, Icon, Segment, Button } from 'semantic-ui-react';
 import Dropzone from 'react-dropzone';
 
@@ -38,7 +37,7 @@ class create extends React.Component {
     console.log(this.state.file[0]);
     formData.append('file', this.state.file[0]);
 
-    Axios.post(Host, formData)
+    Axios.post('/api', formData)
       .then(res => this.props.history.push('/'))
       .catch(res => console.log(res));
   };

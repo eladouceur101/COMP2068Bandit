@@ -18,13 +18,13 @@ class view extends React.Component {
   };
 
   componentDidMount = () => {
-    Axios.get(`${Host}/${this.state.selectedID}`).then(res => {
+    Axios.get(`/api/${this.state.selectedID}`).then(res => {
       this.setState({ art: res.data });
     });
   };
 
   handleDelete = id => {
-    Axios.post(`${Host}/${id}/delete`).then(() => this.props.history.push('/'));
+    Axios.post(`/api/${id}/delete`).then(() => this.props.history.push('/'));
   };
 
   render() {

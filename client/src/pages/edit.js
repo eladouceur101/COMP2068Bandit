@@ -1,6 +1,5 @@
 import React from 'react';
 import Axios from 'axios';
-import Host from '../config/api';
 import { Form, Container, Icon, Segment, Button } from 'semantic-ui-react';
 import Dropzone from 'react-dropzone';
 
@@ -21,7 +20,7 @@ class Edit extends React.Component {
   };
 
   componentDidMount = () => {
-    Axios.get(`${Host}/${this.state.selectedID}`).then(res => {
+    Axios.get(`/api/${this.state.selectedID}`).then(res => {
       this.setState({
         artName: res.data.artName,
         description: res.data.description,
@@ -53,7 +52,7 @@ class Edit extends React.Component {
     console.log(this.state.file[0]);
     formData.append('file', this.state.file[0]);
 
-    Axios.post(`${Host}/${this.state.selectedID}`, formData)
+    Axios.post(`/api/${this.state.selectedID}`, formData)
       .then(res => this.props.history.push('/'))
       .catch(res => console.log(res));
   };
