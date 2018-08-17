@@ -66,7 +66,7 @@ class view extends React.Component {
                       Price
                     </Label>
                     {/* to do */}
-                    <span>{this.state.art.price}</span>
+                    <span>${this.state.art.price}</span>
                   </Grid.Row>
                 </Segment>
 
