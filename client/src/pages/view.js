@@ -1,6 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
-import Host from '../config/api';
+
 import {
   Container,
   Button,
