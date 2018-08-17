@@ -145,9 +145,7 @@ class view extends React.Component {
 
               <Grid.Column>
                 <Segment raised>
-                  <Image
-                    src={`http://localhost:3000/${this.state.art.imgURL}`}
-                  />
+                  <Image src={`/${this.state.art.imgURL}`} />
                 </Segment>
               </Grid.Column>
             </Grid>

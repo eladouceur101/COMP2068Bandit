@@ -78,7 +78,7 @@ class Edit extends React.Component {
                   ) : (
                     <div>
                       <img
-                        src={`http://localhost:3000/${this.state.imgURL}`}
+                        src={`/${this.state.imgURL}`}
                         alt="Uploaded File"
                         style={{ height: '200px', width: '200px' }}
                       />
