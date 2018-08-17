@@ -49,23 +49,50 @@ exports.create = (req, res) => {
 };
 
 exports.update = (req, res) => {
-  if (!req.files) return res.status(500).send('No file uploaded.');
+  if (req.files) {
+    let image = req.files.file;
 
-  let image = req.files.file;
+    let uploadedLocation = `public/art/${image.name}`;
 
-  let uploadedLocation = `public/art/${image.name}`;
+    let art = JSON.parse(req.body.art);
 
-  let art = JSON.parse(req.body.art);
-
-  image.mv(uploadedLocation, err => {
-    if (err) return res.status(500).send(err);
+    image.mv(uploadedLocation, err => {
+      if (err) return res.status(500).send(err);
+      Art.update(
+        {
+          _id: req.params.id,
+        },
+        {
+          artName: art.artName,
+          imgURL: `art/${image.name}`,
+          description: art.description,
+          price: art.price,
+          artist: {
+            name: art.artist.name,
+            born: art.artist.born,
+            died: art.artist.died,
+            nationality: art.artist.nationality,
+          },
+        },
+      )
+        .then(() =>
+          res.status(200).send({
+            message: 'art added',
+          }),
+        )
+        .catch(err => {
+          res.status(500).send(err);
+          console.log(err);
+        });
+    });
+  } else {
+    let art = JSON.parse(req.body.art);
     Art.update(
       {
         _id: req.params.id,
       },
       {
         artName: art.artName,
-        imgURL: `art/${image.name}`,
         description: art.description,
         price: art.price,
         artist: {
@@ -85,7 +112,7 @@ exports.update = (req, res) => {
         res.status(500).send(err);
         console.log(err);
       });
-  });
+  }
 };
 
 exports.delete = (req, res) => {

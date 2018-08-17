@@ -96,7 +96,9 @@ class view extends React.Component {
                       Birth
                     </Label>
                     {/* to do */}
-                    <span>{this.state.art.artist.born}</span>
+                    <span>
+                      {new Date(this.state.art.artist.born).toDateString()}
+                    </span>
                     {/* <span>{born.substring(0, dateLength)}</span> */}
                   </Grid.Row>
                 </Segment>
@@ -107,7 +109,9 @@ class view extends React.Component {
                       Death
                     </Label>
                     {/* to do */}
-                    <span>{this.state.art.artist.died}</span>
+                    <span>
+                      {new Date(this.state.art.artist.died).toDateString()}
+                    </span>
                   </Grid.Row>
                 </Segment>
                 <Segment raised>
